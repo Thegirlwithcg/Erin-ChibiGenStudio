@@ -1,7 +1,7 @@
 title: Chibi Gen Studio
 description: "Powerful Blender add-ons and resources for stylized character artists. Creator of Chibi Gen Pro 2."
 url: "https://chibigenstudio.com" # will be set to your GitHub Pages URL
-baseurl: "/Erin-ChibiGenStudio" # e.g. "/repo-name" if hosted at username.github.io/repo-name
+baseurl: "" # e.g. "/repo-name" if hosted at username.github.io/repo-name
 
 author:
   name: "Erin n Patt"
