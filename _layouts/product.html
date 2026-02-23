@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="product-layout">
+    <div class="product-header">
+      <h1 class="post-title" style="margin-bottom: 1rem;">{{ page.title }}</h1>
+      <div class="product-meta" style="margin-bottom: 2rem; color: var(--text-secondary);">
+        <span style="font-size: 2rem; font-weight: 700; color: var(--text-primary);">{{ page.price }}</span>
+      </div>
+    </div>
+    
+    <div class="product-content-grid" style="display: grid; grid-template-columns: 1fr 350px; gap: 3rem; align-items: start;">
+      <!-- Main Content -->
+      <div>
+        {% if page.image %}
+        <div class="product-hero-image" style="margin-bottom: 3rem; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="width: 100%; height: auto; display: block;">
+        </div>
+        {% endif %}
+
+        <article class="post-content">
+          {{ content }}
+        </article>
+      </div>
+
+      <!-- Sidebar / Purchase Card -->
+      <aside class="product-sidebar" style="position: sticky; top: 100px;">
+        <div class="feature-card" style="padding: 2rem;">
+          <h3 style="margin-bottom: 1rem; text-align: center;">Get {{ page.title }}</h3>
+          
+          <div style="margin-bottom: 2rem; text-align: center;">
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              <i data-lucide="info" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+              Tip: We recommend creating an account on Superhive or Gumroad before purchasing to easily receive future updates.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            {% if page.superhive_url %}
+            <a href="{{ page.superhive_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-superhive" style="width: 100%; justify-content: center;">
+              <i data-lucide="store"></i>
+              Buy on Superhive
+            </a>
+            {% endif %}
+
+            {% if page.gumroad_url %}
+            <a href="{{ page.gumroad_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-gumroad" style="width: 100%; justify-content: center;">
+              <i data-lucide="shopping-cart"></i>
+              Buy on Gumroad
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 900px) {
+    .product-content-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .product-sidebar {
+      position: static !important;
+      margin-top: 2rem;
+    }
+  }
+</style>

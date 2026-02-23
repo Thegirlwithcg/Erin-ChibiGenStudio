@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-icon">✦</span>
+        <h3>{{ site.title }}</h3>
+        <p class="footer-tagline">Simplifying Stylized Art.</p>
+        <p class="footer-founder">Founded by {{ site.author.full_name }} ({{ site.author.name }})</p>
+        <p class="footer-location"><i data-lucide="map-pin"></i> {{ site.footer.location }}</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Connect</h4>
+        {% if site.social.youtube != "" %}
+        <a href="https://youtube.com/{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>
+        {% endif %}
+        {% if site.social.twitter != "" %}
+        <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter / X</a>
+        {% endif %}
+        {% if site.social.instagram != "" %}
+        <a href="https://instagram.com/{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a>
+        {% endif %}
+        {% if site.social.gumroad != "" %}
+        <a href="https://{{ site.social.gumroad }}.gumroad.com" target="_blank" rel="noopener">Gumroad</a>
+        {% endif %}
+        {% if site.author.email != "your-email@example.com" %}
+        <a href="mailto:{{ site.author.email }}">Email</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+        <a href="{{ '/terms/' | relative_url }}">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

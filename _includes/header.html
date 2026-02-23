@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">{{ site.title }}</span>
+    </a>
+
+    <nav class="site-nav" id="main-nav">
+      <ul class="nav-links">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="{{ '/shop/' | relative_url }}" class="btn btn-primary">Shop Add-ons & Courses</a>
+      </div>
+    </nav>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/about/' | relative_url }}">About</a>
+    <a href="{{ '/shop/' | relative_url }}">Shop</a>
+  </nav>
+</header>

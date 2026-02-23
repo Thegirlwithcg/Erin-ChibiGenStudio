@@ -1,0 +1,62 @@
+---
+layout: default
+title: Shop Add-ons & Courses
+---
+
+<section class="blog-hero">
+  <div class="container">
+    <span class="section-label">Shop</span>
+    <h1>Our Premium Add-ons</h1>
+    <p>Professional Blender tools designed to streamline your 3D workflow and bring your characters to life.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="posts-grid">
+      {% for product in site.products %}
+      <article class="post-card">
+        {% if product.image %}
+        <div class="post-card-image">
+          <a href="{{ product.url | relative_url }}">
+            <img src="{{ product.image | relative_url }}" alt="{{ product.title }}">
+          </a>
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="category-tag" style="font-weight: 700; color: var(--color-primary);">{{ product.price }}</span>
+          </div>
+          <h2><a href="{{ product.url | relative_url }}">{{ product.title }}</a></h2>
+          <p>{{ product.description | strip_html | truncatewords: 30 }}</p>
+        </div>
+        <div class="post-card-footer" style="padding-bottom: 1rem; border-bottom: none;">
+          <a href="{{ product.url | relative_url }}" class="read-more" style="margin-right: auto;">
+            Read More <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; width: 100%; padding: 0 1.5rem 1.5rem 1.5rem; margin-top: auto;">
+          {% if product.gumroad_url %}
+          <a href="{{ product.gumroad_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-gumroad" style="flex: 1; justify-content: center; padding: 0.5rem 1rem; font-size: 0.875rem;">
+            <i data-lucide="shopping-cart"></i>
+            Gumroad
+          </a>
+          {% endif %}
+          {% if product.superhive_url %}
+          <a href="{{ product.superhive_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-superhive" style="flex: 1; justify-content: center; padding: 0.5rem 1rem; font-size: 0.875rem;">
+            <i data-lucide="store"></i>
+            Superhive
+          </a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if site.products.size == 0 %}
+    <div style="text-align: center; padding: 60px 0;">
+      <p style="color: var(--color-text-dim); font-size: 1.1rem;">No products yet. Check back soon!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

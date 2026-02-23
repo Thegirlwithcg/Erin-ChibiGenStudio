@@ -1,0 +1,51 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="blog-hero">
+  <div class="container">
+    <span class="section-label">Blog</span>
+    <h1>Articles &amp; Tutorials</h1>
+    <p>Tips, tutorials, and behind-the-scenes looks at our creative process.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="posts-grid">
+      {% for post in site.posts %}
+      <article class="post-card">
+        {% if post.image %}
+        <div class="post-card-image">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          </a>
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            {% if post.categories.first %}
+            <span class="category-tag">{{ post.categories.first }}</span>
+            {% endif %}
+          </div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </div>
+        <div class="post-card-footer">
+          <a href="{{ post.url | relative_url }}" class="read-more">
+            Read More <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+    <div style="text-align: center; padding: 60px 0;">
+      <p style="color: var(--color-text-dim); font-size: 1.1rem;">No posts yet. Check back soon!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

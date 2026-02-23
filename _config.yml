@@ -1,0 +1,61 @@
+title: Chibi Gen Studio
+description: "Powerful Blender add-ons and resources for stylized character artists. Creator of Chibi Gen Pro 2."
+url: "" # will be set to your GitHub Pages URL
+baseurl: "" # e.g. "/repo-name" if hosted at username.github.io/repo-name
+
+author:
+  name: "Erin n Patt"
+  full_name: "Nichada Patthanawong"
+  email: "your-email@example.com"
+  bio: "Lead artist and developer behind Chibi Gen Studio."
+
+social:
+  twitter: ""
+  instagram: ""
+  gumroad: ""
+  superhive: ""
+  youtube: ""
+
+footer:
+  location: "Thailand"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  products:
+    output: true
+    permalink: /shop/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md

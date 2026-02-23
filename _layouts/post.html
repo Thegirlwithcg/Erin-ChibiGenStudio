@@ -1,0 +1,71 @@
+---
+layout: default
+---
+<article class="post-full">
+  <header class="post-header">
+    <div class="container">
+      {% if page.image %}
+      <div class="post-hero-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.categories %}
+        <span class="post-categories">
+          {% for cat in page.categories %}
+          <span class="category-tag">{{ cat }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </div>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.excerpt_text %}
+      <p class="post-subtitle">{{ page.excerpt_text }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.gumroad_id or page.superhive_url %}
+    <div class="post-shop-buttons">
+      <h3>Get This Product</h3>
+      <div class="shop-button-group">
+        {% if page.gumroad_id %}
+        <a class="gumroad-button btn btn-gumroad" href="https://{{ site.social.gumroad }}.gumroad.com/l/{{ page.gumroad_id }}">
+          <i data-lucide="shopping-cart"></i>
+          Buy on Gumroad
+        </a>
+        {% endif %}
+        {% if page.superhive_url %}
+        <a class="btn btn-superhive" href="{{ page.superhive_url }}" target="_blank" rel="noopener">
+          <i data-lucide="store"></i>
+          Buy on Superhive
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="post-navigation">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+        <span class="nav-label"><i data-lucide="arrow-left"></i> Previous</span>
+        <span class="nav-title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+        <span class="nav-label">Next <i data-lucide="arrow-right"></i></span>
+        <span class="nav-title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</article>
+
+<script>lucide.createIcons();</script>
