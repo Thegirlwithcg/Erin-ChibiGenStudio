@@ -4,7 +4,7 @@ title: "Introducing Chibi Gen Pro 2 — The Ultimate Chibi Character Generator"
 date: 2026-02-20
 categories: [Announcements]
 excerpt_text: "The biggest update to our Blender add-on is here. Generate adorable, animation-ready chibi characters in minutes."
-image: assets\images\ChibiGenPro2-post.png
+image: assets/images/ChibiGenPro2-post.png
 gumroad_id: chibi-gen-pro-2
 superhive_url: https://superhive.example.com/chibi-gen-pro-2
 ---
