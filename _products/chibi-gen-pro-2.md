@@ -3,9 +3,9 @@ layout: product
 title: "Chibi Gen Pro 2"
 description: "The ultimate Blender add-on for creating stylized Chibi characters. Includes base mesh, shape keys, hair assets, and full Mixamo/Rigify support."
 price: "$15"
-image: "/assets/images/placeholder-post-1.png"
-gumroad_url: "#"
-superhive_url: "#"
+image: assets\images\ChibiGenPro2-post.png
+gumroad_url: "https://erinnpatt.gumroad.com/l/chibigenpro2"
+superhive_url: "https://superhivemarket.com/products/chibi-gen-pro2"
 ---
 
 ## Bring Your Chibi Characters to Life in Minutes
